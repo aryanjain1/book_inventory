@@ -1,0 +1,24 @@
+
+{%load bootstrap4%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+</head>
+<body>
+
+<form method="post" novalidate>
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input type="submit" value="submit">
+</form>
+{% if messages %}
+ {% for i in messages %}
+    {{ i }}
+  {%  endfor %}
+{% endif %}
+</body>
+</html>

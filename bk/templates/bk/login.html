@@ -1,0 +1,22 @@
+
+{%load bootstrap4%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+</head>
+<body>
+<form method="post" novalidate>
+    {% csrf_token %}
+    {% bootstrap_form forms %}
+    <input type="submit" value="login">
+
+</form>
+<a style="display: inline-block" class="button" href="{% url 'register'  %}"><button  class="btn btn-primary">Register</button></a>
+</body>
+</html>
